@@ -18,11 +18,12 @@ type User {
 }
 
 type Product {
+  id: ID! @unique
   name: String!
   description: String
   createdAt: DateTime!
   updatedAt: DateTime!
-  count: Int!
+  count: Int
   pictureUrl: String!
   price: Float!
   seller: User!
