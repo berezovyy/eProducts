@@ -1,10 +1,9 @@
-// import shortid from 'shortid'
 import { createWriteStream } from "fs";
 import { getUserId, Context } from "../../utils";
+const shortid = require("shortid");
 
 const storeUpload = async ({ stream, filename }): Promise<any> => {
-  // const path = `images/${shortid.generate()}`
-  const path = `images/test`;
+  const path = `images/${shortid.generate()}`;
 
   return new Promise((resolve, reject) =>
     stream
