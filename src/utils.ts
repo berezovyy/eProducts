@@ -6,10 +6,10 @@ export interface Context {
   request: any;
 }
 
-export function getUserId(ctx: Context, jwtToken = "") {
+export function getUserId(ctx: Context) {
   const Authorization = ctx.request.get("Authorization");
 
-  const token = jwtToken || Authorization.replace("Bearer ", "");
+  const token = Authorization.replace("Bearer ", "");
 
   if (token) {
     const { userId } = jwt.verify(token, process.env.APP_SECRET) as {

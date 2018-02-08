@@ -1,6 +1,6 @@
 import { createWriteStream } from "fs";
 import { getUserId, Context } from "../../utils";
-const shortid = require("shortid");
+import * as shortid from "shortid";
 
 const storeUpload = async ({ stream, filename }): Promise<any> => {
   const path = `images/${shortid.generate()}`;
@@ -21,10 +21,8 @@ const processUpload = async upload => {
 
 export const product = {
   async createProduct(parent, { name, price, picture }, ctx: Context, info) {
-    const userId = "cjdameyl90zu101088ayz76m4";
-    console.log(picture);
+    const userId = getUserId(ctx);
     const pictureUrl = await processUpload(picture);
-    console.log(pictureUrl);
     return ctx.db.mutation.createProduct(
       {
         data: {
