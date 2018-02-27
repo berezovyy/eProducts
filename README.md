@@ -1,4 +1,4 @@
-<div align="center"><strong>🚀 Small project for testing Prisma and GraphQL.</strong></div>
+<div align="center"><strong>Small project for testing Prisma and GraphQL.</strong></div>
 
 ## Features
 
