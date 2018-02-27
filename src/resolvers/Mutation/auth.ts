@@ -10,6 +10,7 @@ export const auth = {
       userId
     };
   },
+
   async signup(parent, args, ctx: Context, info) {
     const password = await bcrypt.hash(args.password, 10);
     const user = await ctx.db.mutation.createUser({

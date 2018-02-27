@@ -3,9 +3,6 @@
 scalar Upload
 
 type Query {
-  feed: [Post!]!
-  drafts: [Post!]!
-  post(id: ID!): Post!
   products(
     where: ProductWhereInput
     orderBy: ProductOrderByInput
@@ -15,7 +12,6 @@ type Query {
     first: Int
     last: Int
   ): [Product]!
-  me: User
 }
 
 type RefreshTokenPayload {
@@ -30,9 +26,6 @@ type Mutation {
   createProduct(name: String!, price: Float!, picture: Upload!): Product!
   updateProduct(id: ID!, name: String!, price: Float, picture: Upload!): Product
   deleteProduct(where: ProductWhereUniqueInput!): Product
-  createDraft(title: String!, text: String!): Post!
-  publish(id: ID!): Post!
-  deletePost(id: ID!): Post!
 }
 
 type AuthPayload {
